@@ -30,40 +30,39 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity Modulo is
-    Port ( clock : in  STD_LOGIC;
-           reset : in  STD_LOGIC;
-           output : buffer integer range 0 to 7
+    Port ( Clock : in  STD_LOGIC;
+           Reset : in  STD_LOGIC;
+           Output : buffer integer range 0 to 7
          );
 end Modulo;
 
 architecture Behavioral of Modulo is
 
 begin
-  process(clock, reset) 
+  process(Clock, Reset) 
 begin
 
-   if(reset = '1') then 
-	    output <= 0;
-		
-	elsif rising_edge(clock) then
-	  if output = 0 then
-		   output <= 5;
-    elsif output = 5 then
-       output <= 4;
-    elsif output = 4 then
-		   output <= 2;
-    elsif output = 2 then
-		   output <= 6;
-    elsif output = 6 then
-		   output <= 3;
-    elsif output = 3 then
-		   output <= 1;
-    elsif output = 1 then
-		   output <= 0;
-    elsif output = 7 then
-		   output <= 0;
-    
-		end if; 
+   if(Reset = '1') then 
+	    Output <= 0;
+	
+	elsif rising_edge(Clock) then
+	  if Output = 0 then
+		Output <= 5;
+    	elsif Output = 5 then
+       		Output <= 4;
+    	elsif Output = 4 then
+		   Output <= 2;
+    	elsif Output = 2 then
+		   Output <= 6;
+    	elsif Output = 6 then
+		   Output <= 3;
+    	elsif Output = 3 then
+		   Output <= 1;
+    	elsif Output = 1 then
+		   Output <= 0;
+    	elsif Output = 7 then
+		   Output <= 0;
+	end if; 
 		
 	elsif falling_edge(clock) then
 	    output <= output;
