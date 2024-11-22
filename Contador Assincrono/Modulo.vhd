@@ -32,7 +32,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity Modulo is
     Port ( Clock : in  STD_LOGIC;
            Reset : in  STD_LOGIC;
-           Output : buffer integer range 0 to 15);
+           Output : buffer integer range 0 to 15
+	 );
 end Modulo;
 
 architecture Behavioral of Modulo is
